@@ -21,12 +21,12 @@
  * @return {number}
  */
 var reverse = function(x) {
-    const result = [];
-    const numArray = x.toString().split('');
-    for (var i = 0; i < numArray.length; i++) {
-        if (numArray[i] !== 0) {
-            result.unshift(numArray[i]);
-        }
+  const result = [];
+  const numArray = x.toString().split('');
+  for (var i = 0; i < numArray.length; i++) {
+    if (numArray[i] !== 0) {
+        result.unshift(numArray[i]);
     }
-    return result.join('');
+  }
+  return result.join('');
 };

@@ -17,40 +17,40 @@
 
 // Brute force- O(n2)
 var twoSumBruteForce = function(nums, target) {
-    for (let i = 0; i < nums.length; i++) {
-        for (let j = i +1; j < nums.length; j++){
-            if (nums[j] === target - nums[i]) {
-                return [i, j];
-            }
-        }
+  for (let i = 0; i < nums.length; i++) {
+    for (let j = i +1; j < nums.length; j++){
+      if (nums[j] === target - nums[i]) {
+          return [i, j];
+      }
     }
+  }
 };
 
 // With Hash Map- O(n)
 var twoSumHashMap = function(nums, target) {
-    let hashMap = {}
+  let hashMap = {}
 
-    for (let i = 0; i < nums.length; i++) {
-        hashMap[nums[i]] = i;
-    }
+  for (let i = 0; i < nums.length; i++) {
+    hashMap[nums[i]] = i;
+  }
 
-    for (let i = 0; i < nums.length; i++) {
-        let complement = target - nums[i];
-        if (hashMap[complement]) {
-            return [i,hashMap[complement]];
-        }
+  for (let i = 0; i < nums.length; i++) {
+    let complement = target - nums[i];
+    if (hashMap[complement]) {
+        return [i,hashMap[complement]];
     }
+  }
 }
 
 // Improved Hash Map - O(n)
 var twoSumHashMapV2 = function(nums, target) {
-    let hashMap = {};
+  let hashMap = {};
 
-    for (let i = 0; i < nums.length; i++) {
-        let complement = target - nums[i];
-        if (hashMap[complement]) {
-            return [i, hashMap[complement]];
-        }
-        hashMap[nums[i]] = i
+  for (let i = 0; i < nums.length; i++) {
+    let complement = target - nums[i];
+    if (hashMap[complement]) {
+        return [i, hashMap[complement]];
     }
+    hashMap[nums[i]] = i
+  }
 }
