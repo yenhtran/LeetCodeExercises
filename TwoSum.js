@@ -42,15 +42,15 @@ var twoSumHashMap = function(nums, target) {
   }
 }
 
-// Improved Hash Map - O(n)
+// Improved Hash Map with Set - O(n)
 var twoSumHashMapV2 = function(nums, target) {
-  let hashMap = {};
-
+  let set = new Set();
+  let complement;
   for (let i = 0; i < nums.length; i++) {
-    let complement = target - nums[i];
-    if (hashMap[complement]) {
-        return [i, hashMap[complement]];
+    complement = target - nums[i];
+    if (set.has(complement)) {
+        return true;
     }
-    hashMap[nums[i]] = i
+    return false;
   }
 }
